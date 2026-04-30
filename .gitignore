@@ -1,0 +1,5 @@
+node_modules/
+tasks.db
+*.pyc
+__pycache__/
+.streamlit/
