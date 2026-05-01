@@ -51,4 +51,5 @@ Works on Railway - just set the PORT environment variable.
 
 For production set a proper SECRET key in app.js
 1. P.S. Use VPN and then run the webapp or else it will show DNS_PROBE_FINISHED_NXDOMAIN
-2. Run streamlit in terminal 
+2. link for webapp: https://task-manager-production-2b13.up.railway.app
+3. Run streamlit in terminal 
