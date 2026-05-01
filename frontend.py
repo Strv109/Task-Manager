@@ -3,7 +3,7 @@ import requests
 import json
 from datetime import datetime, date
 
-API_URL = "https://task-manager-production-6759.up.railway.app/api"
+API_URL = "https://task-manager-production-b4ef.up.railway.app"
 
 st.set_page_config(page_title="TaskManager", layout="wide")
 
