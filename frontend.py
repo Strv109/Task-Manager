@@ -3,7 +3,7 @@ import requests
 import json
 from datetime import datetime, date
 #python -m streamlit run frontend.py
-API_URL = "http://task-manager-production-2b13.up.railway.app/api"
+API_URL = "https://task-manager-production-2b13.up.railway.app/api"
 
 st.set_page_config(page_title="TaskManager", layout="wide")
 

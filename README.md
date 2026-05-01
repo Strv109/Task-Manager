@@ -50,3 +50,5 @@ SQLite database gets created automatically on first run with these tables:
 Works on Railway - just set the PORT environment variable.
 
 For production set a proper SECRET key in app.js
+P.S. Use VPN and then run the webapp or else it will show DNS_PROBE_FINISHED_NXDOMAIN
+Run streamlit in terminal 
