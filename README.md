@@ -22,7 +22,7 @@ Backend runs on port 5000
 ### Frontend
 ```bash
 pip install -r requirements.txt
-streamlit run frontend.py
+python -m streamlit run frontend.py
 ```
 
 Frontend runs on port 8501

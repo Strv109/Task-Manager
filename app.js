@@ -5,11 +5,16 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 const SECRET = 'mysecretkey123';
 
 app.use(cors());
 app.use(express.json());
+app.get('/', (req, res) => {
+  res.send('TaskManager Backend is LIVE. API endpoints are available at /api');
+});
+
+const SECRET = process.env.JWT_SECRET || 'mysecretkey123';
 
 const db = new sqlite3.Database('./tasks.db');
 
@@ -220,7 +225,7 @@ app.get('/api/dashboard', auth, (req, res) => {
                     db.all(`SELECT status, COUNT(*) as count FROM tasks WHERE project_id IN (${placeholders}) GROUP BY status`,
                       projectIds, (err, byStatus) => {
                         
-                        db.all(`SELECT t.*, p.name as project_name, u.name as assignee_name 
+                        db.all(`SELECT t.*, p.name as project_name, u.name as assignee_name
                                 FROM tasks t JOIN projects p ON t.project_id = p.id 
                                 LEFT JOIN users u ON t.assignee_id = u.id 
                                 WHERE t.project_id IN (${placeholders}) 
@@ -244,6 +249,6 @@ app.get('/api/dashboard', auth, (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
 });
